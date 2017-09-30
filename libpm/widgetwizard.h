@@ -1,0 +1,5 @@
+#ifndef WIDGETWIZARD
+#define WIDGETWIZARD
+
+#endif // WIDGETWIZARD
+

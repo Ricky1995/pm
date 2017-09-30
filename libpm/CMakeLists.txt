@@ -132,6 +132,7 @@ set (MocReleatedSources
                     images.qrc
                     PmCommandExec.cpp
                     VmInfoIpAddress.cpp
+                    WidgetWizard.cpp
                     WidgetAbout.cpp
                     WidgetCommandExec.cpp
                     WidgetNewTab.cpp
@@ -147,6 +148,7 @@ set (MocReleatedSources
 set (MocReleatedHeaders
                     PmCommandExec.h
                     VmInfoIpAddress.h
+                    WidgetWizard.h
                     WidgetAbout.h
                     WidgetCommandExec.h
                     WidgetNewTab.h
@@ -160,6 +162,7 @@ set (MocReleatedHeaders
                     )
 
 set(MocReleatedForms
+                    WidgetWizard.ui
                     WidgetAbout.ui
                     WidgetCommandExec.ui
                     WidgetNewTab.ui

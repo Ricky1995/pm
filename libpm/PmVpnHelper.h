@@ -23,6 +23,7 @@
 
 #include "utils.h"
 #include "UserConfig.h"
+#include "VmMaskInstance.h"
 
 using std::string;
 

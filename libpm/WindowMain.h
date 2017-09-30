@@ -26,6 +26,7 @@
 #include <QMessageBox>
 #include <QVector>
 
+#include "WidgetWizard.h"
 #include "WidgetAbout.h"
 #include "WidgetUpdate.h"
 #include "WidgetNewTab.h"
@@ -65,6 +66,7 @@ class WindowMain : public QMainWindow
     QLabel *updateMessage_;
     WidgetUpdate *regenerationWidget_;
     QTabWidget *tabWidget_;
+    WidgetWizard *wizardWidget_;
     WidgetAbout *aboutWidget_;
 
   protected:
@@ -88,6 +90,7 @@ class WindowMain : public QMainWindow
     void slotCleanAllVmMasks();
     void slotRegenerationFinished(ePmCommandResult parResult);
     void slotRegenerationIpSuccess();
+    void slotStartWizard();
     void slotShowAbout();
     void slotEnableMenueEntryForceCleanup();
 

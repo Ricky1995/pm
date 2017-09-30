@@ -39,12 +39,18 @@ WindowMain::WindowMain(QWidget *parParent) :
   updateMessage_(nullptr),
   regenerationWidget_(nullptr),
   tabWidget_(nullptr),
+  wizardWidget_(nullptr),
   aboutWidget_(nullptr),
   ui_(new Ui::WindowMain())
 {
   ui_->setupUi(this);
 
   setWindowTitle(QApplication::applicationName());
+
+  connect(ui_->actionStartWizard,
+          &QAction::triggered,
+          this,
+          &WindowMain::slotStartWizard);
 
   connect(ui_->actionQuit,
           &QAction::triggered,
@@ -60,6 +66,18 @@ WindowMain::WindowMain(QWidget *parParent) :
           &QAction::triggered,
           this,
           &WindowMain::slotCleanAllVmMasks);
+}
+
+void WindowMain::slotStartWizard()
+{
+  if(wizardWidget_ != nullptr)
+  {
+    delete wizardWidget_;
+  }
+  wizardWidget_ = new WidgetWizard();
+  wizardWidget_->setWindowIcon(QIcon(":/resources/privacymachine.svg"));
+  wizardWidget_->setWindowTitle("Wizard");
+  wizardWidget_->show();
 }
 
 void WindowMain::slotShowAbout()
@@ -428,6 +446,13 @@ WindowMain::~WindowMain()
     pmManager_ = nullptr;
   }
 
+  if (wizardWidget_)
+  {
+    delete wizardWidget_;
+    wizardWidget_ = nullptr;
+  }
+
+
   if (aboutWidget_)
   {
     delete aboutWidget_;
@@ -530,6 +555,13 @@ void WindowMain::closeEvent(QCloseEvent * parEvent)
     delete regenerationWidget_;
     regenerationWidget_=nullptr;
   }
+
+  if (wizardWidget_ != nullptr)
+  {
+    delete wizardWidget_;
+    wizardWidget_ = nullptr;
+  }
+
 
   if (aboutWidget_ != nullptr)
   {
