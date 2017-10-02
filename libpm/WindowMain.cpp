@@ -47,7 +47,7 @@ WindowMain::WindowMain(QWidget *parParent) :
 
   setWindowTitle(QApplication::applicationName());
 
-  connect(ui_->actionStartWizard,
+  connect(ui_->actionStart_Wizard,
           &QAction::triggered,
           this,
           &WindowMain::slotStartWizard);
