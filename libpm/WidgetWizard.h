@@ -1,6 +1,8 @@
 #ifndef WidgetWizard_H
 #define WidgetWizard_H
 
+#include "PmManager.h"
+
 #include <QWidget>
 #include <QGroupBox>
 #include <QPushButton>
@@ -20,12 +22,13 @@ class WidgetWizard : public QWidget
     Q_OBJECT
 
   public:
-    explicit WidgetWizard(QWidget *parent = nullptr);
+    explicit WidgetWizard(QWidget *parent = nullptr, PmManager *pmManager = nullptr);
     ~WidgetWizard();
     void addWidget(QWidget *w);
 
   private:
     Ui::WidgetWizard *ui_;
+    PmManager *pmManager;
 
     QComboBox *selectedMask;
     QGroupBox *properties;
@@ -46,6 +49,7 @@ class WidgetWizard : public QWidget
     QPlainTextEdit *description;
 
   private slots:
+    void handleSelectionChanged(int index);
     void handleNewMask();
     void handleChangeColour();
     void handleSave();

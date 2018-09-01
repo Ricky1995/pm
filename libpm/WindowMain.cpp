@@ -74,7 +74,7 @@ void WindowMain::slotStartWizard()
   {
     delete wizardWidget_;
   }
-  wizardWidget_ = new WidgetWizard();
+  wizardWidget_ = new WidgetWizard(nullptr, pmManager_);
   wizardWidget_->setWindowIcon(QIcon(":/resources/privacymachine.svg"));
   wizardWidget_->setWindowTitle("Wizard");
   wizardWidget_->show();
