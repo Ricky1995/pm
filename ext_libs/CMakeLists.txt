@@ -90,8 +90,9 @@ SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 # Needed for QuaZip
 set (CMAKE_POSITION_INDEPENDENT_CODE TRUE)
 
-# Disabled by default: set to ON to get quick compile times but a useless PM ;)
-set(SKIP_FREERDP_CODE "OFF") # Valid values: ON/OFF
+# Disabled by default
+# TODO: "schiachabalaft" disables the usage of FreeRDP -> It's a Hack!
+set(SKIP_FREERDP_CODE "ON") # Valid values: ON/OFF
 if (SKIP_FREERDP_CODE)
   # add a define useable in cpp source
   add_definitions(-DSKIP_FREERDP_CODE)
@@ -160,6 +161,8 @@ if (NOT SKIP_FREERDP_CODE)
   set (WITH_OPENSSL ON)
   
   MESSAGE("Configuring FreeRDP...")
+  set(VENDOR "PrivacyMachine")
+  set(CLIENT_VENDOR_PATH "FreeRDP")
   set (FREERDP_SKIP_WINPR_TOOLS ON)
   set (FREERDP_CUSTOM_INSTALL ON)
   if (MSVC)
