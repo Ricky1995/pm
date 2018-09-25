@@ -1,0 +1,22 @@
+ {
+
+  "manifest_version": 2,
+  "name": "Privacy Machine",
+  "version": "0.1",
+
+  "description": "Opens a link in the Privacy Machine when alt+shift is pressed.",
+
+  "icons": {
+    "48": "icon.png"
+  },
+  
+  "permissions": [
+    "tabs",
+    "contextMenus"
+  ],
+  
+  "background": {
+	"scripts": ["pmBackground.js"]
+  }
+
+}
