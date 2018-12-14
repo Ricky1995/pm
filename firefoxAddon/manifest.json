@@ -9,10 +9,17 @@
   "icons": {
     "48": "icon.png"
   },
+
+  "applications": {
+    "gecko": {
+      "id": "firefox_addon@pm.org",
+      "strict_min_version": "50.0"
+    }
+  },
   
   "permissions": [
-    "tabs",
-    "contextMenus"
+    "contextMenus",
+    "nativeMessaging"
   ],
   
   "background": {

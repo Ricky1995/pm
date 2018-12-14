@@ -1,11 +1,13 @@
 // Todo: get masks
-maskNames = ["Test"]
+
+maskNames = ["What is the answer?"]
 maskFullNames = ["test"]
 
 // Handle context menu
 browser.contextMenus.onClicked.addListener(function (info) {
     if (maskFullNames.includes(info.menuItemId)) {
-		browser.tabs.update({url:info.linkUrl});
+		// Todo: start pm
+		console.log("starting pm");
 	}
 });
 
